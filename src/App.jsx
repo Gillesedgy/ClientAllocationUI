@@ -1,31 +1,44 @@
-import { Route, Routes, Router } from "react-router-dom";
+// src/App.jsx
 import NavBar from "./Components/Navigation/NavBar";
 import ClientList from "./Components/Clients/ClientList";
-import Banner from "./Components/Home/Banner";
 import Employees from "./Components/Employees/Employees";
+import RateCard from "./Components/RateCard/RateCard";
+import Contracts from "./Components/Contracts/Contracts";
+import Contact from "./Components/Contact/Contact";
 
-const App = () => {
+function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <NavBar /> {/* <Router>
-       
-        <section>
-          <Banner />
-        </section>
-        <section>
-          <ClientList />
-        </section> */}
-      <Routes>
-        {/* <Route path="/" element={<Banner />} /> */}
-        <Route path="/clients" element={<ClientList />} />
-        <Route path="/employees" element={<Employees />} />
-
-        {/* Add more routes here */}
-      </Routes>
-      {/* </Router> */}
+    <div className="App">
+      <NavBar />
+      <section id="home" className="p-8">
+        <h1 className="text-4xl font-extrabold text-center">
+          Welcome to People Shores Allocation System
+        </h1>
+      </section>
+      <section id="about" className="p-8 bg-gray-100">
+        <p className="text-lg text-center">
+          This system helps manage clients, contracts, employees, and rate cards
+          efficiently.
+        </p>
+      </section>
+      <section id="clients">
+        <ClientList />
+      </section>
+      <section id="employees">
+        <Employees />
+      </section>
+      <section id="rating">
+        <RateCard />
+      </section>
+      <section id="contracts">
+        <Contracts />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
-};
+}
 
 export default App;
 
